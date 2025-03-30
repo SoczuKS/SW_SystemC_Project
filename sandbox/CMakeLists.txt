@@ -1,0 +1,4 @@
+project(SW_SystemC_Project_Sandbox)
+
+add_executable(SW_SystemC_Project_Sandbox1 sandbox1.cpp)
+target_link_libraries(SW_SystemC_Project_Sandbox1 SystemC::systemc)
