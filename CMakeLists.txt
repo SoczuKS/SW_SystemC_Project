@@ -11,5 +11,10 @@ FetchContent_MakeAvailable(SystemC)
 
 add_subdirectory(sandbox)
 
-add_executable(SW_SystemC_Project main.cpp)
-target_link_libraries(SW_SystemC_Project SystemC::systemc)
+set(SOURCES
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/App.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+
+add_executable(SW_SystemC_Project ${SOURCES})
+target_include_directories(SW_SystemC_Project PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(SW_SystemC_Project PRIVATE SystemC::systemc)
