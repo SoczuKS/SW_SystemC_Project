@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 4.0.0)
 project(SW_SystemC_Project)
 
 include(FetchContent)
@@ -13,11 +13,15 @@ add_subdirectory(sandbox)
 
 set(INCLUDES
         ${CMAKE_CURRENT_SOURCE_DIR}/include/App.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/Time.hpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/TimeSwitchTask.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/Time.hpp
+)
 
 set(SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/App.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/TimeSwitchTask.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+)
 
 add_executable(SW_SystemC_Project ${INCLUDES} ${SOURCES})
 target_include_directories(SW_SystemC_Project PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
