@@ -13,12 +13,14 @@ add_subdirectory(sandbox)
 
 set(INCLUDES
         ${CMAKE_CURRENT_SOURCE_DIR}/include/App.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/Controller.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/include/TimeSwitchTask.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/include/Time.hpp
 )
 
 set(SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/App.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Controller.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/TimeSwitchTask.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
 )
