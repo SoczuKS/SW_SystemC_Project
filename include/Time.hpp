@@ -4,10 +4,10 @@ namespace sw_project
 {
 enum class Time
 {
-    t25 = 25,
-    t35 = 35,
-    t45 = 45,
-    t75 = 75,
-    t85 = 85
+    min25 = 25,
+    min35 = 35,
+    min45 = 45,
+    min75 = 75,
+    min85 = 85
 };
 }
