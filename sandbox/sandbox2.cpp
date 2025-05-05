@@ -3,7 +3,8 @@
 class Proc : public sc_core::sc_module
 {
 public:
-    Proc(sc_core::sc_module_name name) : sc_core::sc_module(name)
+    explicit Proc(const sc_core::sc_module_name& name)
+        : sc_module{name}
     {
         SC_THREAD(thread);
         SC_METHOD(method);

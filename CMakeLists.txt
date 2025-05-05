@@ -13,18 +13,18 @@ add_subdirectory(sandbox)
 
 set(INCLUDES
         ${CMAKE_CURRENT_SOURCE_DIR}/include/App.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/Controller.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/include/Fifo.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/TimeSwitchTask.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/InputModule.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/OutputModule.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/include/Time.hpp
 )
 
 set(SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/App.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/Controller.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/Fifo.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/TimeSwitchTask.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/InputModule.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/OutputModule.cpp
 )
 
 add_executable(SW_SystemC_Project ${INCLUDES} ${SOURCES})
