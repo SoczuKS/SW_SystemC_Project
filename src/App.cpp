@@ -4,13 +4,15 @@
 namespace sw_project
 {
 App::App()
-    : fifo{std::make_shared<Fifo>()}
-    , inputModule{fifo}
-    , outputModule{fifo}
+    : running{true}
+    , fifo{std::make_unique<Fifo<Time> >(running)}
+    , inputModule{running, *fifo}
+    , outputModule{running, *fifo}
 {}
 
-int App::start(int argc, char** argv)
+int App::start(int, char**)
 {
+    sc_core::sc_start();
     return 0;
 }
 } // namespace sw_project

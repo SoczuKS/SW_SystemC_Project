@@ -1,12 +1,12 @@
 #pragma once
 #include <memory>
+#include "Fifo.hpp"
 #include "InputModule.hpp"
 #include "OutputModule.hpp"
+#include "Time.hpp"
 
 namespace sw_project
 {
-class Fifo;
-
 class App
 {
 public:
@@ -15,7 +15,8 @@ public:
     int start(int argc, char** argv);
 
 private:
-    std::shared_ptr<Fifo> fifo;
+    bool running;
+    std::unique_ptr<Fifo<Time> > fifo;
     InputModule inputModule;
     OutputModule outputModule;
 };

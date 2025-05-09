@@ -1,17 +1,32 @@
 #pragma once
-#include <memory>
+#include <optional>
 #include <systemc>
+#include "IFifoWrite.hpp"
+#include "Time.hpp"
 
 namespace sw_project
 {
-class Fifo;
-
 class InputModule final : public sc_core::sc_module
 {
 public:
-    explicit InputModule(std::shared_ptr<Fifo>);
+    InputModule(bool& running, IFifoWrite<Time>&);
 
 private:
-    std::shared_ptr<Fifo> fifo;
+    void readInput();
+
+    void analyzeInputForTime25();
+
+    void analyzeInputForTime35();
+
+    void analyzeInputForTime45();
+
+    void analyzeInputForTime75();
+
+    void analyzeInputForTime85();
+
+    bool& running;
+    IFifoWrite<Time>& fifo;
+    std::optional<std::string> input;
+    std::mutex inputMutex;
 };
 }

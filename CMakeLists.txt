@@ -21,12 +21,18 @@ set(INCLUDES
 
 set(SOURCES
         ${CMAKE_CURRENT_SOURCE_DIR}/src/App.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/Fifo.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/InputModule.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/OutputModule.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Time.cpp
 )
 
 add_executable(SW_SystemC_Project ${INCLUDES} ${SOURCES})
 target_include_directories(SW_SystemC_Project PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(SW_SystemC_Project PRIVATE SystemC::systemc)
+
+if(MSVC)
+    target_compile_options(SW_SystemC_Project PRIVATE /W4 /Wall)
+else()
+    target_compile_options(SW_SystemC_Project PRIVATE -Wall -Wextra -Wpedantic -Werror)
+endif()

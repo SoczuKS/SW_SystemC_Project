@@ -1,20 +1,23 @@
 #pragma once
 #include <map>
-#include <memory>
 #include <systemc>
+#include "IFifoRead.hpp"
 #include "Time.hpp"
 
 namespace sw_project
 {
-class Fifo;
-
 class OutputModule final : public sc_core::sc_module
 {
 public:
-    explicit OutputModule(std::shared_ptr<Fifo>);
+    OutputModule(const bool&, IFifoRead<Time>&);
+
+    ~OutputModule() override = default;
 
 private:
-    std::shared_ptr<Fifo> fifo;
+    const bool& running;
+    IFifoRead<Time>& fifo;
     std::map<Time, bool> states;
+
+    void setOutput();
 };
 }
