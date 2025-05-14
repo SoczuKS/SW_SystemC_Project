@@ -41,7 +41,7 @@ void InputModule::readInput()
             }
             input = i;
         }
-        wait(1, sc_core::SC_SEC);
+        wait(0.5, sc_core::SC_SEC);
     }
 }
 
@@ -57,7 +57,7 @@ void InputModule::analyzeInputForTime25()
                 input.reset();
             }
         }
-        wait(1, sc_core::SC_SEC);
+        wait(0.1, sc_core::SC_SEC);
     }
 }
 
@@ -73,7 +73,7 @@ void InputModule::analyzeInputForTime35()
                 input.reset();
             }
         }
-        wait(1, sc_core::SC_SEC);
+        wait(0.1, sc_core::SC_SEC);
     }
 }
 
@@ -89,7 +89,7 @@ void InputModule::analyzeInputForTime45()
                 input.reset();
             }
         }
-        wait(1, sc_core::SC_SEC);
+        wait(0.1, sc_core::SC_SEC);
     }
 }
 
@@ -105,7 +105,7 @@ void InputModule::analyzeInputForTime75()
                 input.reset();
             }
         }
-        wait(1, sc_core::SC_SEC);
+        wait(0.1, sc_core::SC_SEC);
     }
 }
 
@@ -121,7 +121,7 @@ void InputModule::analyzeInputForTime85()
                 input.reset();
             }
         }
-        wait(1, sc_core::SC_SEC);
+        wait(0.1, sc_core::SC_SEC);
     }
 }
 }

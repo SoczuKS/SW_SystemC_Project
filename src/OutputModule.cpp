@@ -57,7 +57,7 @@ void OutputModule::setOutput()
             std::cout << "Error\n";
         }
 
-        wait(1, sc_core::SC_SEC);
+        wait(2.5, sc_core::SC_SEC);
     }
 }
 }
